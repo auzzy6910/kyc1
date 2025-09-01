@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVE KYC WORK - Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+  </head>
+<body>
+    <div class="container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="avatar-container">
+                <div class="avatar">
+                    <span class="avatar-text">AKW</span>
+                </div>
+            </div>
+            <h2 class="profile-title">ACTIVE KYC WORK</h2>
+            <p class="profile-subtitle">Admin Panel</p>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-tab="dashboard">
+                <i class="fas fa-users"></i>
+                <span class="tab-label">Dashboard</span>
+            </button>
+            <button class="nav-tab" data-tab="work">
+                <i class="fas fa-briefcase"></i>
+                <span class="tab-label">Manage</span>
+            </button>
+            <button class="nav-tab" data-tab="analytics">
+                <i class="fas fa-star"></i>
+                <span class="tab-label">Analytics</span>
+            </button>
+            <button class="nav-tab" data-tab="settings">
+                <i class="fas fa-cog"></i>
+                <span class="tab-label">Settings</span>
+            </button>
+        </div>
+
+        <!-- Tab Content -->
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content active">
+            <div class="content-padding">
+                <div class="description">
+                    <p>Here you do kyc work and get paid</p>
+                </div>
+
+                <!-- Stats Dashboard -->
+                <div class="stats-grid">
+                    <div class="stat-card blue">
+                        <div class="stat-number" id="total-works">2</div>
+                        <div class="stat-label">Total Posts</div>
+                    </div>
+                    <div class="stat-card green">
+                        <div class="stat-number" id="open-works">2</div>
+                        <div class="stat-label">Open</div>
+                    </div>
+                    <div class="stat-card purple">
+                        <div class="stat-number" id="total-value">$60</div>
+                        <div class="stat-label">Total Value</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button id="edit-links-btn" class="btn btn-gray">
+                        <i class="fas fa-edit"></i>
+                        Edit Contact Links
+                    </button>
+
+                    <!-- Edit Links Form (Hidden) -->
+                    <div id="edit-form" class="edit-form hidden">
+                        <div class="form-group">
+                            <label>WhatsApp Link:</label>
+                            <input type="text" id="whatsapp-input" placeholder="https://wa.me/1234567890">
+                        </div>
+                        <div class="form-group">
+                            <label>Telegram Link:</label>
+                            <input type="text" id="telegram-input" placeholder="https://t.me/username">
+                        </div>
+                        <div class="button-row">
+                            <button id="save-links" class="btn btn-green">Save</button>
+                            <button id="cancel-edit" class="btn btn-gray">Cancel</button>
+                        </div>
+                    </div>
+
+                    <button id="whatsapp-btn" class="btn btn-green">
+                        <i class="fas fa-message"></i>
+                        WhatsApp
+                    </button>
+
+                    <button id="telegram-btn" class="btn btn-blue">
+                        <i class="fas fa-paper-plane"></i>
+                        Telegram
+                    </button>
+
+                    <button id="active-work-btn" class="btn btn-green-dark">
+                        <i class="fas fa-briefcase"></i>
+                        Active Work
+                    </button>
+
+                    <!-- Work Form (Hidden) -->
+                    <div id="work-form" class="work-form hidden">
+                        <div class="form-header">
+                            <h3>Post New KYC Work</h3>
+                            <button id="close-form" class="close-btn">&times;</button>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Work Title *</label>
+                                <input type="text" id="work-title" placeholder="e.g., ID Document Verification Task">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Client/Company Name *</label>
+                                <input type="text" id="client-name" placeholder="e.g., FinTech Solutions">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select id="work-category">
+                                    <option value="id-verification">ID Verification</option>
+                                    <option value="address-verification">Address Verification</option>
+                                    <option value="document-review">Document Review</option>
+                                    <option value="compliance-check">Compliance Check</option>
+                                    <option value="background-check">Background Check</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Work Description *</label>
+                                <textarea id="work-description" placeholder="Describe the KYC work requirements in detail..."></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Payment Amount *</label>
+                                    <input type="text" id="work-payment" placeholder="e.g., $50, KSh 5000">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Estimated Time</label>
+                                    <input type="text" id="work-time" placeholder="e.g., 2 hours, 1 day">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Priority</label>
+                                    <select id="work-priority">
+                                        <option value="low">Low</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="high">High</option>
+                                        <option value="urgent">Urgent</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Deadline</label>
+                                    <input type="date" id="work-deadline">
+                                </div>
+                            </div>
+                            
+                            <button id="post-work-btn" class="btn btn-green btn-full">
+                                <i class="fas fa-plus"></i>
+                                Post KYC Work
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-footer">
+                    <span>Admin Panel Active</span>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        <span>Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Work Management Tab -->
+        <div id="work" class="tab-content">
+            <div class="content-padding">
+                <div class="section-header">
+                    <h3>Manage Posted Work</h3>
+                    <button id="add-work-btn" class="btn btn-green btn-small">
+                        <i class="fas fa-plus"></i>
+                        Add Work
+                    </button>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="stats-grid-small">
+                    <div class="stat-card green">
+                        <div class="stat-number" id="manage-open-works">2</div>
+                        <div class="stat-label">Open</div>
+                    </div>
+                    <div class="stat-card blue">
+                        <div class="stat-number" id="manage-total-works">2</div>
+                        <div class="stat-label">Total Posts</div>
+                    </div>
+                    <div class="stat-card yellow">
+                        <div class="stat-number" id="manage-total-value">$60</div>
+                        <div class="stat-label">Total Value</div>
+                    </div>
+                </div>
+
+                <!-- Work List -->
+                <div id="work-list" class="work-list">
+                    <!-- Work items will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Tab -->
+        <div id="analytics" class="tab-content">
+            <div class="content-padding">
+                <h3>Platform Analytics</h3>
+                
+                <!-- Chart -->
+                <div class="chart-container">
+                    <h4>Weekly Work Posts</h4>
+                    <div class="chart">
+                        <div class="chart-bar" style="height: 20%"></div>
+                        <div class="chart-bar" style="height: 35%"></div>
+                        <div class="chart-bar" style="height: 50%"></div>
+                        <div class="chart-bar" style="height: 65%"></div>
+                        <div class="chart-bar" style="height: 45%"></div>
+                        <div class="chart-bar" style="height: 70%"></div>
+                        <div class="chart-bar" style="height: 80%"></div>
+                    </div>
+                    <div class="chart-labels">
+                        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                    </div>
+                </div>
+
+                <!-- Metrics -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i class="fas fa-users"></i>
+                            <span>Active Users</span>
+                        </div>
+                        <div class="metric-value">156</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i class="fas fa-clock"></i>
+                            <span>Avg Response</span>
+                        </div>
+                        <div class="metric-value">1.2 hrs</div>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="categories-card">
+                    <h4>Popular Categories</h4>
+                    <div class="category-item">
+                        <span>ID Verification</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 45%"></div>
+                            <span class="percentage">45%</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span>Address Verification</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 30%"></div>
+                            <span class="percentage">30%</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span>Document Review</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 15%"></div>
+                            <span class="percentage">15%</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span>Compliance Check</span>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 10%"></div>
+                            <span class="percentage">10%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div id="settings" class="tab-content">
+            <div class="content-padding">
+                <h3>Admin Settings</h3>
+                
+                <!-- Platform Settings -->
+                <div class="settings-card">
+                    <h4>Platform Configuration</h4>
+                    <div class="setting-group">
+                        <label>Auto-approve applications</label>
+                        <select>
+                            <option value="yes">Yes</option>
+                            <option value="no">No - Manual review</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label>Maximum applicants per work</label>
+                        <input type="number" value="10" min="1" max="50">
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="settings-card">
+                    <h4>Admin Notifications</h4>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span>New user registrations</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span>Work applications</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span>Payment confirmations</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" checked>
+                            <span>System alerts</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
