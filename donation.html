@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stand With Mary Claire - Acid Attack Survivor | Donation & Support</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ==================== RESET & BASE ==================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background: #f8faf8;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ==================== COLOR PALETTE (Green Theme) ==================== */
+        :root {
+            --green-dark: #145a32;
+            --green-primary: #1e8449;
+            --green-medium: #27ae60;
+            --green-light: #82e0aa;
+            --green-pale: #d5f5e3;
+            --green-bg: #eafaf1;
+            --white: #ffffff;
+            --black: #111;
+            --gray-dark: #555;
+            --gray-light: #999;
+            --gold: #f39c12;
+            --red-accent: #e74c3c;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+        }
+
+        /* ==================== NAVBAR ==================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--green-dark);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .navbar .logo i {
+            font-size: 1.5rem;
+            color: var(--green-light);
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--green-light);
+        }
+        .nav-donate-btn {
+            background: var(--green-medium);
+            color: var(--white) !important;
+            padding: 0.5rem 1.2rem !important;
+            border-radius: 25px;
+            font-weight: 600 !important;
+            transition: background 0.3s, transform 0.2s !important;
+        }
+        .nav-donate-btn:hover {
+            background: var(--green-light);
+            color: var(--green-dark) !important;
+            transform: translateY(-2px);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            margin-top: 70px;
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--green-dark) 0%, #0d3d22 100%);
+            overflow: hidden;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1920&q=80') center/cover no-repeat;
+            opacity: 0.12;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero-text {
+            color: var(--white);
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+            color: var(--green-light);
+        }
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+        .hero-text h1 span {
+            color: var(--green-light);
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: var(--green-medium);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background: var(--green-light);
+            color: var(--green-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(39,174,96,0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        .btn-outline:hover {
+            border-color: var(--green-light);
+            color: var(--green-light);
+            transform: translateY(-3px);
+        }
+        .hero-image-container {
+            position: relative;
+        }
+        .hero-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid rgba(255,255,255,0.2);
+            position: relative;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .hero-image .urgent-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--red-accent);
+            color: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .hero-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--green-light);
+        }
+        .hero-stat .label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ==================== PROGRESS BAR SECTION ==================== */
+        .progress-section {
+            background: var(--white);
+            padding: 2rem;
+            max-width: 1200px;
+            margin: -3rem auto 0;
+            position: relative;
+            z-index: 5;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            align-items: center;
+        }
+        .progress-info h3 {
+            font-size: 1.1rem;
+            color: var(--green-dark);
+            margin-bottom: 0.5rem;
+        }
+        .progress-bar-container {
+            width: 100%;
+            background: var(--green-pale);
+            border-radius: 20px;
+            height: 20px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--green-medium), var(--green-light));
+            border-radius: 20px;
+            width: 22%;
+            transition: width 1s ease;
+            position: relative;
+        }
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .progress-amounts {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--gray-dark);
+        }
+        .progress-amounts .raised {
+            font-weight: 700;
+            color: var(--green-primary);
+            font-size: 1.1rem;
+        }
+        .progress-donate-btn {
+            white-space: nowrap;
+        }
+
+        /* ==================== STORY SECTION ==================== */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-header .tag {
+            display: inline-block;
+            background: var(--green-pale);
+            color: var(--green-primary);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--green-dark);
+            font-weight: 700;
+        }
+        .section-header p {
+            color: var(--gray-dark);
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .story-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .story-images .img-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        .story-images .img-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .story-images .img-card:hover img {
+            transform: scale(1.05);
+        }
+        .story-images .img-card:first-child {
+            grid-column: span 2;
+        }
+        .story-images .img-card:first-child img {
+            height: 280px;
+        }
+        .story-images .img-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: var(--white);
+            padding: 1.5rem 1rem 0.8rem;
+            font-size: 0.8rem;
+        }
+        .story-text h3 {
+            font-size: 1.5rem;
+            color: var(--green-dark);
+            margin-bottom: 1rem;
+        }
+        .story-text p {
+            color: var(--gray-dark);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .story-text .quote {
+            border-left: 4px solid var(--green-medium);
+            padding: 1rem 1.5rem;
+            background: var(--green-bg);
+            border-radius: 0 10px 10px 0;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--green-dark);
+        }
+        .story-text .quote cite {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--gray-dark);
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: 600;
+        }
+        .timeline {
+            margin-top: 2rem;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--green-medium);
+            margin-top: 6px;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100% + 12px);
+            background: var(--green-pale);
+        }
+        .timeline-item:last-child .timeline-dot::after {
+            display: none;
+        }
+        .timeline-content .date {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--green-primary);
+            text-transform: uppercase;
+        }
+        .timeline-content p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* ==================== VIDEO SECTION ==================== */
+        .video-section {
+            background: var(--green-dark);
+            padding: 5rem 2rem;
+        }
+        .video-section .section-header h2,
+        .video-section .section-header p,
+        .video-section .section-header .tag {
+            color: var(--white);
+        }
+        .video-section .section-header .tag {
+            background: rgba(255,255,255,0.15);
+            color: var(--green-light);
+        }
+        .video-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .video-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .video-card .video-wrapper {
+            position: relative;
+            padding-top: 56.25%;
+            background: #000;
+        }
+        .video-card iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .video-card .video-info {
+            padding: 1.2rem;
+        }
+        .video-card .video-info h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        .video-card .video-info p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+        }
+
+        /* ==================== PROMINENT FIGURES ==================== */
+        .figures-section {
+            background: var(--green-bg);
+            padding: 5rem 2rem;
+        }
+        .figures-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .figure-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .figure-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        .figure-card .figure-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        .figure-card .figure-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .figure-card:hover .figure-img img {
+            transform: scale(1.05);
+        }
+        .figure-card .figure-info {
+            padding: 1.5rem;
+        }
+        .figure-card .figure-info h4 {
+            font-size: 1.1rem;
+            color: var(--green-dark);
+            margin-bottom: 0.3rem;
+        }
+        .figure-card .figure-info .role {
+            color: var(--green-primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .figure-card .figure-info p {
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+            margin-top: 0.8rem;
+        }
+        .figure-card .figure-info .action-tag {
+            display: inline-block;
+            background: var(--green-pale);
+            color: var(--green-primary);
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.8rem;
+        }
+
+        /* ==================== DONATION SECTION ==================== */
+        .donate-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        .donate-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .donate-form-card {
+            background: var(--green-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+        .donate-form-card h3 {
+            color: var(--green-dark);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .donate-form-card > p {
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .amount-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .amount-btn {
+            padding: 0.8rem;
+            border: 2px solid var(--green-medium);
+            background: var(--white);
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--green-primary);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .amount-btn:hover, .amount-btn.selected {
+            background: var(--green-medium);
+            color: var(--white);
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--green-dark);
+            margin-bottom: 0.3rem;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid var(--green-pale);
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+            background: var(--white);
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--green-medium);
+        }
+        .form-group textarea {
+            height: 80px;
+            resize: vertical;
+        }
+        .payment-methods {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .payment-method {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid var(--green-pale);
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: var(--white);
+        }
+        .payment-method.selected {
+            border-color: var(--green-medium);
+            background: var(--green-pale);
+        }
+        .payment-method i {
+            font-size: 1.5rem;
+            color: var(--green-primary);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .payment-method span {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--green-dark);
+        }
+        .donate-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--green-medium);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .donate-submit:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30,132,73,0.3);
+        }
+        .recent-donations {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .recent-donations h3 {
+            color: var(--green-dark);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .recent-donations > p {
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .donation-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--green-bg);
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+            transition: transform 0.2s;
+        }
+        .donation-item:hover {
+            transform: translateX(5px);
+        }
+        .donation-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--green-medium);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .donation-details {
+            flex: 1;
+        }
+        .donation-details .donor-name {
+            font-weight: 600;
+            color: var(--green-dark);
+            font-size: 0.9rem;
+        }
+        .donation-details .donor-amount {
+            color: var(--green-primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .donation-details .donor-time {
+            font-size: 0.75rem;
+            color: var(--gray-light);
+        }
+        .donation-details .donor-comment {
+            font-size: 0.85rem;
+            color: var(--gray-dark);
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+
+        /* ==================== COMMENTS SECTION ==================== */
+        .comments-section {
+            background: var(--green-bg);
+            padding: 5rem 2rem;
+        }
+        .comments-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .comment-form {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        .comment-form h3 {
+            color: var(--green-dark);
+            margin-bottom: 1rem;
+        }
+        .comment-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .comment-submit {
+            margin-top: 1rem;
+            padding: 0.7rem 2rem;
+            background: var(--green-medium);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .comment-submit:hover {
+            background: var(--green-dark);
+        }
+        .comments-list {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .comment-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--green-medium);
+        }
+        .comment-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--green-medium);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .comment-meta .comment-name {
+            font-weight: 600;
+            color: var(--green-dark);
+            font-size: 0.9rem;
+        }
+        .comment-meta .comment-name .donor-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.1rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.65rem;
+            margin-left: 0.5rem;
+            font-weight: 700;
+        }
+        .comment-meta .comment-time {
+            font-size: 0.75rem;
+            color: var(--gray-light);
+        }
+        .comment-body {
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+        }
+        .comment-actions {
+            margin-top: 0.8rem;
+            display: flex;
+            gap: 1rem;
+        }
+        .comment-action {
+            background: none;
+            border: none;
+            color: var(--gray-light);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.3s;
+        }
+        .comment-action:hover {
+            color: var(--green-primary);
+        }
+        .comment-action.liked {
+            color: var(--red-accent);
+        }
+
+        /* ==================== IMPACT / STATS ==================== */
+        .impact-section {
+            background: linear-gradient(135deg, var(--green-dark), #0d3d22);
+            padding: 4rem 2rem;
+            color: var(--white);
+        }
+        .impact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+        .impact-item .impact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .impact-item .impact-icon i {
+            font-size: 1.5rem;
+            color: var(--green-light);
+        }
+        .impact-item .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        .impact-item .impact-label {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* ==================== HOW TO HELP ==================== */
+        .help-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+        .help-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .help-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 20px;
+            background: var(--green-bg);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .help-card:hover {
+            border-color: var(--green-medium);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        .help-card .help-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--green-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .help-card .help-icon i {
+            font-size: 1.5rem;
+            color: var(--green-primary);
+        }
+        .help-card h4 {
+            color: var(--green-dark);
+            margin-bottom: 0.5rem;
+        }
+        .help-card p {
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--green-dark);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-brand h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+        .footer-brand h3 i {
+            color: var(--green-light);
+            margin-right: 8px;
+        }
+        .footer-brand p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+        .footer-social {
+            display: flex;
+            gap: 0.8rem;
+        }
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        .footer-social a:hover {
+            background: var(--green-medium);
+        }
+        .footer-col h4 {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-col ul li a {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--green-light);
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* ==================== MODAL ==================== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+        @keyframes modalIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-light);
+        }
+        .modal .modal-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--green-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .modal .modal-icon i {
+            font-size: 2rem;
+            color: var(--green-medium);
+        }
+        .modal h3 {
+            color: var(--green-dark);
+            margin-bottom: 0.5rem;
+        }
+        .modal p {
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+        }
+
+        /* ==================== BACK TO TOP ==================== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--green-medium);
+            color: var(--white);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: var(--shadow);
+            transition: background 0.3s, transform 0.3s;
+            border: none;
+        }
+        .back-to-top.visible {
+            display: flex;
+        }
+        .back-to-top:hover {
+            background: var(--green-dark);
+            transform: translateY(-3px);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text p {
+                margin: 0 auto 2rem;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .hero-image img {
+                height: 400px;
+            }
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+            .donate-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 1rem;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--green-dark);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 0.5rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .hero-image img {
+                height: 300px;
+            }
+            .progress-section {
+                grid-template-columns: 1fr;
+                margin: -2rem 1rem 0;
+            }
+            .impact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .comment-form .form-row {
+                grid-template-columns: 1fr;
+            }
+            .amount-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            .figures-grid {
+                grid-template-columns: 1fr;
+            }
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.6rem;
+            }
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            .hero-stats {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .payment-methods {
+                flex-direction: column;
+            }
+        }
+
+        /* ==================== SCROLLBAR ==================== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--green-pale);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--green-medium);
+            border-radius: 10px;
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-hand-holding-heart"></i>
+            <span>Stand With Claire</span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#story">Her Story</a></li>
+            <li><a href="#video">Media</a></li>
+            <li><a href="#figures">Supporters</a></li>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#comments">Comments</a></li>
+            <li><a href="#donate" class="nav-donate-btn">Donate Now</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge"><i class="fas fa-heart"></i>&nbsp; Urgent Appeal</div>
+                <h1>Stand With <span>Mary Claire</span></h1>
+                <p>Mary Claire, a 24-year-old gospel singer and SDA church member, was brutally attacked with acid on March 17, 2026 in Nairobi. She is fighting for her life at Kenyatta National Hospital. She needs your help to recover and receive the medical care she deserves.</p>
+                <div class="hero-buttons">
+                    <a href="#donate" class="btn btn-primary"><i class="fas fa-heart"></i> Donate Now</a>
+                    <a href="#story" class="btn btn-outline"><i class="fas fa-book-open"></i> Read Her Story</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="number" id="donorCount">847</div>
+                        <div class="label">Donors</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">KSh 1.1M</div>
+                        <div class="label">Raised</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="number">KSh 5M</div>
+                        <div class="label">Goal</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="hero-image">
+                    <img src="https://app.devin.ai/attachments/da240116-209e-4c67-a182-85dc3e97c580/mary.jpg" alt="Mary Claire in hospital bed at Kenyatta National Hospital after acid attack" onerror="this.src='https://placehold.co/800x500/145a32/ffffff?text=Stand+With+Mary+Claire'">
+                    <div class="urgent-tag"><i class="fas fa-exclamation-circle"></i> URGENT: ICU Care Needed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROGRESS BAR ==================== -->
+    <div class="progress-section fade-in">
+        <div class="progress-info">
+            <h3><i class="fas fa-chart-line"></i> Fundraising Progress</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="progress-amounts">
+                <span class="raised">KSh 1,100,000 raised</span>
+                <span>Goal: KSh 5,000,000</span>
+            </div>
+        </div>
+        <a href="#donate" class="btn btn-primary progress-donate-btn"><i class="fas fa-hand-holding-heart"></i> Contribute</a>
+    </div>
+
+    <!-- ==================== STORY SECTION ==================== -->
+    <section class="section" id="story">
+        <div class="section-header fade-in">
+            <div class="tag">Her Story</div>
+            <h2>Mary Claire's Journey</h2>
+            <p>A talented gospel singer whose life was changed in an instant by a senseless act of violence</p>
+        </div>
+        <div class="story-grid">
+            <div class="story-images fade-in">
+                <div class="img-card">
+                    <img src="https://img.youtube.com/vi/FD15DrwfhW8/maxresdefault.jpg" alt="Mary Claire - Citizen TV news coverage of acid attack" onerror="this.src='https://img.youtube.com/vi/FD15DrwfhW8/hqdefault.jpg'">
+                    <div class="img-caption"><i class="fas fa-tv"></i> Mary Claire - Citizen TV Coverage</div>
+                </div>
+                <div class="img-card">
+                    <img src="https://app.devin.ai/attachments/da240116-209e-4c67-a182-85dc3e97c580/mary.jpg" alt="Mary Claire in hospital bed at KNH" onerror="this.src='https://placehold.co/400x200/27ae60/ffffff?text=Mary+Claire'">
+                    <div class="img-caption"><i class="fas fa-hospital"></i> Mary Claire at KNH Hospital Bed</div>
+                </div>
+                <div class="img-card">
+                    <img src="https://img.youtube.com/vi/FD15DrwfhW8/sddefault.jpg" alt="Mary Claire's burned clothes from acid attack" onerror="this.src='https://placehold.co/400x200/1e8449/ffffff?text=Evidence+Photos'">
+                    <div class="img-caption"><i class="fas fa-hands-holding-heart"></i> Community Rallies for Justice</div>
+                </div>
+            </div>
+            <div class="story-text fade-in">
+                <h3>A Voice of Hope Silenced by Violence</h3>
+                <p>Mary Claire, affectionately known as "Clare," is a 24-year-old gospel artist and a proud member of the <strong>Redemption Ministers Kenya</strong>, a singing group based at the SDA Mabera Main Church in Migori County. She dedicated her life to spreading hope and joy through music.</p>
+                <p>On <strong>Tuesday, March 17, 2026</strong>, while walking home from work along Ngong Road in Nairobi with her friend Sarah Watiri, a man identified as <strong>Lucas Ochieng'</strong> approached her and splashed acid directly onto her face, causing severe burns that have left her fighting for her life.</p>
+
+                <div class="quote">
+                    "Sarah, I'm dying. Get me water. Wash my face." — Those were the words Claire cried out as the acid burned her face and her clothes melted away.
+                    <cite>— As recounted by her friend Sarah Watiri</cite>
+                </div>
+
+                <p>Claire is currently receiving treatment at <strong>Kenyatta National Hospital</strong>. Speaking from her hospital bed, she shared: <em>"Macho moja haioni"</em> (One of my eyes cannot see), revealing the extent of her injuries. Despite the trauma, Claire remains hopeful for a full recovery.</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="date">March 17, 2026</div>
+                            <p>Claire attacked with acid on Ngong Road, Nairobi by Lucas Ochieng'</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="date">March 17, 2026</div>
+                            <p>Attacker Lucas Ochieng' cornered and arrested by public and police at the scene</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="date">March 22, 2026</div>
+                            <p>Main suspect Elvis Opiyo (ex-boyfriend) arrested with coordination from Mike Sonko</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="date">March 23, 2026</div>
+                            <p>Both suspects detained; Kibera Law Courts orders further investigation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VIDEO SECTION ==================== -->
+    <section class="video-section" id="video">
+        <div class="section-header fade-in">
+            <div class="tag">Media Coverage</div>
+            <h2>Watch the Story Unfold</h2>
+            <p>News coverage and reports documenting Claire's story and the pursuit of justice</p>
+        </div>
+        <div class="video-grid fade-in">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/FD15DrwfhW8" title="Woman, 24, fights for life after Nairobi acid attack - Citizen TV" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Woman, 24, Fights for Life After Nairobi Acid Attack</h4>
+                    <p>Citizen TV Kenya &bull; March 22, 2026</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/FD15DrwfhW8?start=30" title="Claire speaks from hospital bed" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Claire Speaks from Hospital Bed: "Macho Moja Haioni"</h4>
+                    <p>Citizen TV Kenya / Tuko.co.ke &bull; March 23, 2026</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/FD15DrwfhW8?start=60" title="Sonko coordinates arrest of acid attack suspect" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>How Mike Sonko Coordinated the Arrest of Claire's Attacker</h4>
+                    <p>Pulse Kenya &bull; March 23, 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROMINENT FIGURES ==================== -->
+    <section class="figures-section" id="figures">
+        <div class="section-header fade-in">
+            <div class="tag">Prominent Supporters</div>
+            <h2>Those Who Stood With Claire</h2>
+            <p>Prominent Kenyan figures who intervened and helped bring the attackers to justice</p>
+        </div>
+        <div class="figures-grid fade-in">
+            <div class="figure-card">
+                <div class="figure-img">
+                    <img src="https://pbs.twimg.com/profile_images/1068523498982875136/7MhQCgkP_400x400.jpg" alt="Mike Sonko - Former Nairobi Governor" onerror="this.src='https://placehold.co/600x250/145a32/ffffff?text=Mike+Sonko'">
+                </div>
+                <div class="figure-info">
+                    <h4>Mike Sonko</h4>
+                    <div class="role">Former Nairobi Governor</div>
+                    <p>Sonko personally coordinated the arrest of Elvis Opiyo, Claire's ex-boyfriend and the alleged mastermind behind the acid attack. He visited Claire in hospital and pledged to cover her medical bills and ensure she receives justice.</p>
+                    <span class="action-tag"><i class="fas fa-shield-halved"></i> Coordinated Arrest & Medical Bills</span>
+                </div>
+            </div>
+            <div class="figure-card">
+                <div class="figure-img">
+                    <img src="https://placehold.co/600x250/1e8449/ffffff?text=Sarah+Watiri+-+Claire's+Friend" alt="Sarah Watiri - Claire's friend who was present during the acid attack" onerror="this.src='https://placehold.co/600x250/1e8449/ffffff?text=Sarah+Watiri'">
+                </div>
+                <div class="figure-info">
+                    <h4>Sarah Watiri</h4>
+                    <div class="role">Claire's Friend & Witness</div>
+                    <p>Sarah was walking with Claire when the attack occurred. Despite sustaining injuries herself, she helped trick Elvis Opiyo into traveling to Nairobi from Homa Bay, leading to his arrest. A true friend who risked her safety for justice.</p>
+                    <span class="action-tag"><i class="fas fa-star"></i> Helped Trap Suspect</span>
+                </div>
+            </div>
+            <div class="figure-card">
+                <div class="figure-img">
+                    <img src="https://placehold.co/600x250/27ae60/ffffff?text=Kibera+Police+%26+DCI+Officers" alt="Kibera Police and DCI Officers who arrested the acid attack suspects" onerror="this.src='https://placehold.co/600x250/27ae60/ffffff?text=Law+Enforcement'">
+                </div>
+                <div class="figure-info">
+                    <h4>Kibera Police & DCI Officers</h4>
+                    <div class="role">Kenya National Police Service</div>
+                    <p>Officers swiftly arrested Lucas Ochieng' at the scene with help from the public. The DCI launched a coordinated investigation, building a case that led to both suspects being detained at Kibera Police Station.</p>
+                    <span class="action-tag"><i class="fas fa-gavel"></i> Swift Investigation & Arrest</span>
+                </div>
+            </div>
+            <div class="figure-card">
+                <div class="figure-img">
+                    <img src="https://placehold.co/600x250/82e0aa/145a32?text=Kenyan+Public+%26+Community" alt="Kenyan public who cornered the acid attacker on Ngong Road" onerror="this.src='https://placehold.co/600x250/82e0aa/145a32?text=Community+Heroes'">
+                </div>
+                <div class="figure-info">
+                    <h4>Kenyan Public & Community</h4>
+                    <div class="role">Citizens Who Intervened</div>
+                    <p>Bystanders on Ngong Road cornered Lucas Ochieng' before he could flee, holding him until police arrived. The Kenyan public has rallied behind Claire, with an outpouring of donations, prayers, and calls for justice against acid attacks.</p>
+                    <span class="action-tag"><i class="fas fa-people-group"></i> Cornered Attacker</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== IMPACT STATS ==================== -->
+    <section class="impact-section">
+        <div class="impact-grid fade-in">
+            <div class="impact-item">
+                <div class="impact-icon"><i class="fas fa-users"></i></div>
+                <div class="impact-number" data-target="847">0</div>
+                <div class="impact-label">Total Donors</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+                <div class="impact-number">KSh 1.1M</div>
+                <div class="impact-label">Total Raised</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-icon"><i class="fas fa-comments"></i></div>
+                <div class="impact-number" data-target="856">0</div>
+                <div class="impact-label">Messages of Support</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-icon"><i class="fas fa-share-nodes"></i></div>
+                <div class="impact-number" data-target="4200">0</div>
+                <div class="impact-label">Social Shares</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DONATE SECTION ==================== -->
+    <section class="donate-section" id="donate">
+        <div class="section-header fade-in">
+            <div class="tag">Make a Difference</div>
+            <h2>Donate to Support Claire</h2>
+            <p>Every contribution helps Claire get closer to recovery. All donations go directly to her medical care.</p>
+        </div>
+        <div class="donate-grid">
+            <div class="donate-form-card fade-in">
+                <h3><i class="fas fa-heart" style="color:var(--green-medium)"></i> Make Your Donation</h3>
+                <p>Choose an amount or enter a custom value. Donors can leave a comment below.</p>
+
+                <div class="amount-options">
+                    <button class="amount-btn" onclick="selectAmount(this, 50)">KSh 50</button>
+                    <button class="amount-btn" onclick="selectAmount(this, 100)">KSh 100</button>
+                    <button class="amount-btn" onclick="selectAmount(this, 200)">KSh 200</button>
+                    <button class="amount-btn selected" onclick="selectAmount(this, 500)">KSh 500</button>
+                    <button class="amount-btn" onclick="selectAmount(this, 1000)">KSh 1,000</button>
+                    <button class="amount-btn" onclick="selectAmount(this, 2000)">KSh 2,000</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Custom Amount (KSh)</label>
+                    <input type="number" id="customAmount" placeholder="Enter amount in KSh" min="1">
+                </div>
+
+                <div class="form-group">
+                    <label>Your Full Name</label>
+                    <input type="text" id="donorName" placeholder="e.g., John Kamau" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="donorEmail" placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number (M-Pesa)</label>
+                    <input type="tel" id="donorPhone" placeholder="0712 345 678">
+                </div>
+
+                <label style="font-size:0.85rem;font-weight:600;color:var(--green-dark);margin-bottom:0.5rem;display:block;">Payment Method</label>
+                <div class="payment-methods">
+                    <div class="payment-method selected" onclick="selectPayment(this)">
+                        <i class="fas fa-mobile-screen"></i>
+                        <span>M-Pesa</span>
+                    </div>
+                    <div class="payment-method" onclick="selectPayment(this)">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Card</span>
+                    </div>
+                    <div class="payment-method" onclick="selectPayment(this)">
+                        <i class="fas fa-building-columns"></i>
+                        <span>Bank</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Leave a Message (Optional)</label>
+                    <textarea id="donorMessage" placeholder="Write a message of support for Claire..."></textarea>
+                </div>
+
+                <button class="donate-submit" onclick="submitDonation()">
+                    <i class="fas fa-hand-holding-heart"></i> Complete Donation
+                </button>
+            </div>
+
+            <div class="recent-donations fade-in" id="recentDonations">
+                <h3><i class="fas fa-list" style="color:var(--green-medium)"></i> Recent Donations</h3>
+                <p>See who's supporting Claire's recovery</p>
+                <div id="donationsList">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HOW TO HELP ==================== -->
+    <section class="help-section">
+        <div class="section-header fade-in">
+            <div class="tag">Get Involved</div>
+            <h2>Other Ways to Help</h2>
+            <p>Beyond donations, there are many ways you can support Claire and the fight against acid attacks</p>
+        </div>
+        <div class="help-grid fade-in">
+            <div class="help-card">
+                <div class="help-icon"><i class="fas fa-share-nodes"></i></div>
+                <h4>Share Her Story</h4>
+                <p>Spread awareness by sharing Claire's story on social media. Use the hashtag <strong>#StandWithClaire</strong> to amplify her voice.</p>
+            </div>
+            <div class="help-card">
+                <div class="help-icon"><i class="fas fa-pray"></i></div>
+                <h4>Pray for Recovery</h4>
+                <p>Join the thousands praying for Claire's full recovery and healing. Organize prayer sessions in your church or community.</p>
+            </div>
+            <div class="help-card">
+                <div class="help-icon"><i class="fas fa-gavel"></i></div>
+                <h4>Demand Justice</h4>
+                <p>Support campaigns for stricter laws against acid attacks in Kenya. Write to your representative and demand change.</p>
+            </div>
+            <div class="help-card">
+                <div class="help-icon"><i class="fas fa-hand-holding-medical"></i></div>
+                <h4>Volunteer</h4>
+                <p>Help organize fundraising events, awareness campaigns, or provide professional services to support Claire's journey to recovery.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COMMENTS SECTION ==================== -->
+    <section class="comments-section" id="comments">
+        <div class="section-header fade-in">
+            <div class="tag">Community</div>
+            <h2>Messages of Support</h2>
+            <p>Leave a comment to encourage Claire and show your support</p>
+        </div>
+        <div class="comments-container">
+            <div class="comment-form fade-in">
+                <h3><i class="fas fa-comment-dots" style="color:var(--green-medium)"></i> Leave a Comment</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="commentName" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email (optional)</label>
+                        <input type="email" id="commentEmail" placeholder="your@email.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Your Message</label>
+                    <textarea id="commentText" placeholder="Write your message of support for Claire..."></textarea>
+                </div>
+                <button class="comment-submit" onclick="submitComment()">
+                    <i class="fas fa-paper-plane"></i> Post Comment
+                </button>
+            </div>
+
+            <div class="comments-list fade-in" id="commentsList">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3><i class="fas fa-hand-holding-heart"></i> Stand With Claire</h3>
+                <p>A community-driven initiative to support Mary Claire, a 24-year-old acid attack survivor, in her journey to recovery. All donations go directly to her medical care at Kenyatta National Hospital.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/MikeSonkoOfficial" target="_blank" aria-label="Facebook - Mike Sonko's page"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/MikeSonko" target="_blank" aria-label="Twitter - Mike Sonko"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/mikesonko/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/?text=Support%20Mary%20Claire%20acid%20attack%20survivor%20from%20Kenya%20%23StandWithClaire" target="_blank" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.tiktok.com/tag/standwithclaire" target="_blank" aria-label="TikTok - #StandWithClaire"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#story">Her Story</a></li>
+                    <li><a href="#video">Media</a></li>
+                    <li><a href="#figures">Supporters</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://www.tuko.co.ke/kenya/counties/621080-nairobi-gospel-singer-hospitalised-alleged-acid-attack/" target="_blank">Tuko News Report</a></li>
+                    <li><a href="https://www.tuko.co.ke/kenya/counties/621212-mary-clare-details-emerge-how-mike-sonko-coordinated-singers-boyfriends-arrest/" target="_blank">Sonko Arrest Details</a></li>
+                    <li><a href="https://www.the-star.co.ke/news/2026-03-23-netizens-demand-justice-after-gospel-singer-mary-claire-doused-with-acid-in-shocking-attack" target="_blank">The Star Report</a></li>
+                    <li><a href="https://streamlinefeed.co.ke/news/faith-and-femicide-sda-singer-acid-attack-exposes-church-silence" target="_blank">Streamline Feed</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=FD15DrwfhW8" target="_blank">Citizen TV Video</a></li>
+                    <li><a href="#comments">Leave a Comment</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:standwithclaire@support.org"><i class="fas fa-envelope"></i> standwithclaire@support.org</a></li>
+                    <li><a href="tel:+254700000000"><i class="fas fa-phone"></i> +254 700 000 000</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Stand With Claire. All rights reserved.</span>
+            <span>Made with <i class="fas fa-heart" style="color:var(--green-light)"></i> by the community</span>
+        </div>
+    </footer>
+
+    <!-- ==================== THANK YOU MODAL ==================== -->
+    <div class="modal-overlay" id="thankYouModal">
+        <div class="modal">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div class="modal-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Thank You for Your Donation!</h3>
+            <p id="modalMessage">Your generous contribution will help Mary Claire on her road to recovery. May God bless you abundantly.</p>
+        </div>
+    </div>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // ====== SAMPLE DATA ======
+        const sampleDonations = [
+            { name: "Mike Sonko", amount: 100000, time: "2 hours ago", comment: "Stay strong Claire. Justice will be served. I have pledged to cover all your medical bills.", initials: "MS", badge: true },
+            { name: "Redemption Ministers Kenya", amount: 50000, time: "3 hours ago", comment: "Our beloved sister, we are with you every step. The church family sends love and prayers.", initials: "RM", badge: true },
+            { name: "Grace Wanjiku", amount: 1000, time: "4 hours ago", comment: "Praying for your full recovery, Claire. Kenya stands with you!", initials: "GW", badge: true },
+            { name: "James Odera", amount: 500, time: "5 hours ago", comment: "No woman deserves this. We demand justice!", initials: "JO", badge: true },
+            { name: "Ann Muthoni", amount: 2000, time: "6 hours ago", comment: "From the SDA community, we love you Claire. Sending healing prayers.", initials: "AM", badge: true },
+            { name: "Peter Kimani", amount: 200, time: "7 hours ago", comment: "Acid attacks must end in Kenya. Supporting your recovery.", initials: "PK", badge: true },
+            { name: "Esther Akinyi", amount: 1500, time: "8 hours ago", comment: "Your voice will sing again, Claire! God is with you.", initials: "EA", badge: true },
+            { name: "David Njoroge", amount: 100, time: "9 hours ago", comment: "Justice for Claire! The whole country is behind you.", initials: "DN", badge: true },
+            { name: "Faith Chebet", amount: 500, time: "10 hours ago", comment: "Sending love from Eldoret. Be strong mama!", initials: "FC", badge: true },
+            { name: "Hassan Mohamed", amount: 1000, time: "11 hours ago", comment: "This is unacceptable. Supporting medical fund.", initials: "HM", badge: true },
+            { name: "Lucy Wairimu", amount: 100, time: "12 hours ago", comment: "Every little bit counts. Pole sana Claire.", initials: "LW", badge: true },
+            { name: "Anonymous", amount: 2000, time: "13 hours ago", comment: "May God heal you completely. You are not alone.", initials: "AN", badge: true },
+            { name: "Mercy Njeri", amount: 50, time: "14 hours ago", comment: "Nimekutumia kidogo Claire. Mungu akuponye.", initials: "MN", badge: true },
+            { name: "Samuel Otieno", amount: 300, time: "15 hours ago", comment: "Kenyans we must stand together against GBV!", initials: "SO", badge: true },
+            { name: "Wanjiku Maina", amount: 150, time: "16 hours ago", comment: "From my little savings. Get well soon sister.", initials: "WM", badge: true },
+            { name: "Joseph Kipchoge", amount: 1000, time: "17 hours ago", comment: "Praying for you from Eldoret. Stay strong!", initials: "JK", badge: true },
+        ];
+
+        const sampleComments = [
+            { name: "Mercy Wambui", time: "1 hour ago", text: "Claire, you are a warrior! Your voice brought so many people to Christ and now the whole nation stands with you. We are praying for your complete healing. 🙏💚", isDonor: true, likes: 45 },
+            { name: "John Otieno", time: "2 hours ago", text: "This case should set a precedent in Kenya. We need stricter laws against acid attacks. No one should go through what Claire went through. #StandWithClaire #EndAcidAttacks", isDonor: true, likes: 38 },
+            { name: "Rehema Achieng", time: "3 hours ago", text: "I watched the Citizen TV report and couldn't hold my tears. Claire, from one Kenyan woman to another — you are not alone! The community is rallying behind you.", isDonor: false, likes: 32 },
+            { name: "Pastor Daniel Mutiso", time: "4 hours ago", text: "We held a special prayer session at our church today for Claire's healing. God is a healer and He will restore everything the enemy has stolen. Be of good courage, my daughter.", isDonor: true, likes: 56 },
+            { name: "Amina Hassan", time: "5 hours ago", text: "Sent my contribution via M-Pesa. Let's all do what we can — even KSh 100 makes a difference when we come together. Kenyans, let's show the world our compassion. 🇰🇪", isDonor: true, likes: 29 },
+            { name: "Samuel Kiprotich", time: "6 hours ago", text: "Shout out to Mike Sonko for stepping up and ensuring the suspect was arrested. We need more leaders who take action, not just talk. Justice for Claire!", isDonor: false, likes: 67 },
+            { name: "Wanjiku Ngugi", time: "8 hours ago", text: "As a nurse at KNH, I can tell you the medical team is doing everything possible for Claire. But the road to recovery is long and expensive. Please keep donating and sharing. Every bit helps.", isDonor: true, likes: 41 },
+            { name: "Brian Omondi", time: "10 hours ago", text: "Sarah Watiri is the real definition of friendship — she not only stayed with Claire during the attack but helped catch the mastermind. True friendship! 🙌", isDonor: true, likes: 53 },
+        ];
+
+        // ====== RENDER DONATIONS ======
+        function renderDonations() {
+            const list = document.getElementById('donationsList');
+            list.innerHTML = sampleDonations.map(d => `
+                <div class="donation-item">
+                    <div class="donation-avatar">${d.initials}</div>
+                    <div class="donation-details">
+                        <div class="donor-name">${d.name}</div>
+                        <div class="donor-amount">KSh ${d.amount.toLocaleString()}</div>
+                        <div class="donor-time">${d.time}</div>
+                        ${d.comment ? `<div class="donor-comment">"${d.comment}"</div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ====== RENDER COMMENTS ======
+        function renderComments() {
+            const list = document.getElementById('commentsList');
+            list.innerHTML = sampleComments.map((c, i) => `
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <div class="comment-avatar">${c.name.split(' ').map(n => n[0]).join('')}</div>
+                        <div class="comment-meta">
+                            <div class="comment-name">${c.name}${c.isDonor ? '<span class="donor-badge">DONOR</span>' : ''}</div>
+                            <div class="comment-time">${c.time}</div>
+                        </div>
+                    </div>
+                    <div class="comment-body">${c.text}</div>
+                    <div class="comment-actions">
+                        <button class="comment-action" onclick="likeComment(this)" data-likes="${c.likes}">
+                            <i class="far fa-heart"></i> <span>${c.likes}</span>
+                        </button>
+                        <button class="comment-action" onclick="shareComment()">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ====== DONATION FORM ======
+        let selectedAmount = 500;
+
+        function selectAmount(btn, amount) {
+            document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            selectedAmount = amount;
+            document.getElementById('customAmount').value = '';
+        }
+
+        function selectPayment(el) {
+            document.querySelectorAll('.payment-method').forEach(p => p.classList.remove('selected'));
+            el.classList.add('selected');
+        }
+
+        function submitDonation() {
+            const name = document.getElementById('donorName').value.trim();
+            const email = document.getElementById('donorEmail').value.trim();
+            const phone = document.getElementById('donorPhone').value.trim();
+            const message = document.getElementById('donorMessage').value.trim();
+            const custom = document.getElementById('customAmount').value;
+            const amount = custom ? parseInt(custom) : selectedAmount;
+
+            if (!name) {
+                alert('Please enter your name.');
+                return;
+            }
+            if (!amount || amount <= 0) {
+                alert('Please select or enter a valid donation amount.');
+                return;
+            }
+
+            // Add to donations list
+            const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+            sampleDonations.unshift({
+                name: name,
+                amount: amount,
+                time: "Just now",
+                comment: message || "",
+                initials: initials,
+                badge: true
+            });
+            renderDonations();
+
+            // If comment exists, also add to comments
+            if (message) {
+                sampleComments.unshift({
+                    name: name,
+                    time: "Just now",
+                    text: message,
+                    isDonor: true,
+                    likes: 0
+                });
+                renderComments();
+            }
+
+            // Show thank you modal
+            document.getElementById('modalMessage').textContent = 
+                `Thank you, ${name}! Your donation of KSh ${amount.toLocaleString()} will help Mary Claire on her road to recovery. May God bless you abundantly.`;
+            document.getElementById('thankYouModal').classList.add('active');
+
+            // Reset form
+            document.getElementById('donorName').value = '';
+            document.getElementById('donorEmail').value = '';
+            document.getElementById('donorPhone').value = '';
+            document.getElementById('donorMessage').value = '';
+            document.getElementById('customAmount').value = '';
+        }
+
+        // ====== COMMENT FORM ======
+        function submitComment() {
+            const name = document.getElementById('commentName').value.trim();
+            const text = document.getElementById('commentText').value.trim();
+
+            if (!name || !text) {
+                alert('Please enter your name and comment.');
+                return;
+            }
+
+            sampleComments.unshift({
+                name: name,
+                time: "Just now",
+                text: text,
+                isDonor: false,
+                likes: 0
+            });
+            renderComments();
+
+            document.getElementById('commentName').value = '';
+            document.getElementById('commentEmail').value = '';
+            document.getElementById('commentText').value = '';
+
+            alert('Thank you for your message of support! 💚');
+        }
+
+        // ====== LIKE COMMENT ======
+        function likeComment(btn) {
+            const icon = btn.querySelector('i');
+            const countSpan = btn.querySelector('span');
+            let count = parseInt(btn.dataset.likes);
+
+            if (btn.classList.contains('liked')) {
+                count--;
+                btn.classList.remove('liked');
+                icon.className = 'far fa-heart';
+            } else {
+                count++;
+                btn.classList.add('liked');
+                icon.className = 'fas fa-heart';
+            }
+
+            btn.dataset.likes = count;
+            countSpan.textContent = count;
+        }
+
+        function shareComment() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Stand With Mary Claire',
+                    text: 'Support Mary Claire, a 24-year-old acid attack survivor in Kenya.',
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard! Share with your friends.');
+            }
+        }
+
+        // ====== MODAL ======
+        function closeModal() {
+            document.getElementById('thankYouModal').classList.remove('active');
+        }
+
+        // ====== NAVBAR TOGGLE ======
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // Close nav on link click (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // ====== SCROLL ANIMATIONS ======
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // ====== BACK TO TOP ======
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('backToTop');
+            if (window.scrollY > 500) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        });
+
+        // ====== COUNTER ANIMATION ======
+        function animateCounters() {
+            document.querySelectorAll('[data-target]').forEach(counter => {
+                const target = parseInt(counter.dataset.target);
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(current).toLocaleString();
+                }, 16);
+            });
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    counterObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const impactSection = document.querySelector('.impact-section');
+        if (impactSection) counterObserver.observe(impactSection);
+
+        // ====== ACTIVE NAV HIGHLIGHT ======
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ====== INIT ======
+        document.addEventListener('DOMContentLoaded', () => {
+            renderDonations();
+            renderComments();
+        });
+    </script>
+</body>
+</html>
