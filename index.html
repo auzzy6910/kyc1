@@ -1744,6 +1744,9 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- ==================== PAYSTACK INLINE JS ==================== -->
+    <script src="https://js.paystack.co/v2/inline.js"></script>
+
     <!-- ==================== JAVASCRIPT ==================== -->
     <script>
         // ====== SAMPLE DATA ======
@@ -1830,8 +1833,31 @@
         }
 
         function submitDonation() {
-            // Redirect to Paystack payment page
-            window.open('https://paystack.shop/pay/maryclaire', '_blank');
+            // Get amount from custom input or selected preset
+            var customAmt = document.getElementById('customAmount').value;
+            var amount = customAmt ? parseFloat(customAmt) : selectedAmount;
+
+            if (!amount || amount <= 0) {
+                alert('Please enter a valid amount.');
+                return;
+            }
+
+            // Use Paystack Popup (Inline) method
+            var paystackPop = new PaystackPop();
+            paystackPop.newTransaction({
+                key: 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+                email: 'payments@hireconnect.com',
+                amount: amount * 100, // Convert to Kobo/Cents
+                onSuccess: function (transaction) {
+                    console.log('Payment successful! Reference: ' + transaction.reference);
+                    // Show thank you modal
+                    document.getElementById('thankYouModal').classList.add('active');
+                    document.getElementById('modalMessage').textContent = 'Your generous donation of KSh ' + amount.toLocaleString() + ' has been received. Reference: ' + transaction.reference + '. May God bless you abundantly.';
+                },
+                onClose: function () {
+                    alert('Transaction was not completed, window closed.');
+                }
+            });
         }
 
         // ====== COMMENT FORM ======
