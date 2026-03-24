@@ -1302,7 +1302,7 @@
             <li><a href="#figures">Supporters</a></li>
             <li><a href="#donate">Donate</a></li>
             <li><a href="#comments">Comments</a></li>
-            <li><a href="https://paystack.shop/pay/maryclaire" target="_blank" class="nav-donate-btn">Donate Now</a></li>
+            <li><a href="javascript:void(0)" onclick="openPaystack()" class="nav-donate-btn">Donate Now</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleNav()">
             <span></span>
@@ -1320,7 +1320,7 @@
                 <h1>Stand With <span>Mary Claire</span></h1>
                 <p>Mary Claire, a 24-year-old gospel singer and SDA church member, was brutally attacked with acid on March 17, 2026 in Nairobi. She is fighting for her life at Kenyatta National Hospital. She needs your help to recover and receive the medical care she deserves.</p>
                 <div class="hero-buttons">
-                    <a href="https://paystack.shop/pay/maryclaire" target="_blank" class="btn btn-primary"><i class="fas fa-heart"></i> Donate Now</a>
+                    <a href="javascript:void(0)" onclick="openPaystack()" class="btn btn-primary"><i class="fas fa-heart"></i> Donate Now</a>
                     <a href="#story" class="btn btn-outline"><i class="fas fa-book-open"></i> Read Her Story</a>
                 </div>
                 <div class="hero-stats">
@@ -1359,7 +1359,7 @@
                 <span>Goal: KSh 5,000,000</span>
             </div>
         </div>
-        <a href="https://paystack.shop/pay/maryclaire" target="_blank" class="btn btn-primary progress-donate-btn"><i class="fas fa-hand-holding-heart"></i> Contribute</a>
+        <a href="javascript:void(0)" onclick="openPaystack()" class="btn btn-primary progress-donate-btn"><i class="fas fa-hand-holding-heart"></i> Contribute</a>
     </div>
 
     <!-- ==================== STORY SECTION ==================== -->
@@ -1557,62 +1557,17 @@
             <p>Every contribution helps Claire get closer to recovery. All donations go directly to her medical care.</p>
         </div>
         <div class="donate-grid">
-            <div class="donate-form-card fade-in">
+            <div class="donate-form-card fade-in" style="text-align:center;">
                 <h3><i class="fas fa-heart" style="color:var(--green-medium)"></i> Make Your Donation</h3>
-                <p>Choose an amount or enter a custom value. Donors can leave a comment below.</p>
-
-                <div class="amount-options">
-                    <button class="amount-btn" onclick="selectAmount(this, 50)">KSh 50</button>
-                    <button class="amount-btn" onclick="selectAmount(this, 100)">KSh 100</button>
-                    <button class="amount-btn" onclick="selectAmount(this, 200)">KSh 200</button>
-                    <button class="amount-btn selected" onclick="selectAmount(this, 500)">KSh 500</button>
-                    <button class="amount-btn" onclick="selectAmount(this, 1000)">KSh 1,000</button>
-                    <button class="amount-btn" onclick="selectAmount(this, 2000)">KSh 2,000</button>
-                </div>
+                <p>Enter an amount and click the button below to donate securely via Paystack.</p>
 
                 <div class="form-group">
-                    <label>Custom Amount (KSh)</label>
-                    <input type="number" id="customAmount" placeholder="Enter amount in KSh" min="1">
+                    <label>Amount (KSh)</label>
+                    <input type="number" id="donateAmount" placeholder="Enter amount in KSh" min="1" style="font-size:1.1rem;padding:0.9rem;">
                 </div>
 
-                <div class="form-group">
-                    <label>Your Full Name</label>
-                    <input type="text" id="donorName" placeholder="e.g., John Kamau" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" id="donorEmail" placeholder="john@example.com">
-                </div>
-
-                <div class="form-group">
-                    <label>Phone Number (M-Pesa)</label>
-                    <input type="tel" id="donorPhone" placeholder="0712 345 678">
-                </div>
-
-                <label style="font-size:0.85rem;font-weight:600;color:var(--green-dark);margin-bottom:0.5rem;display:block;">Payment Method</label>
-                <div class="payment-methods">
-                    <div class="payment-method selected" onclick="selectPayment(this)">
-                        <i class="fas fa-mobile-screen"></i>
-                        <span>M-Pesa</span>
-                    </div>
-                    <div class="payment-method" onclick="selectPayment(this)">
-                        <i class="fas fa-credit-card"></i>
-                        <span>Card</span>
-                    </div>
-                    <div class="payment-method" onclick="selectPayment(this)">
-                        <i class="fas fa-building-columns"></i>
-                        <span>Bank</span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Leave a Message (Optional)</label>
-                    <textarea id="donorMessage" placeholder="Write a message of support for Claire..."></textarea>
-                </div>
-
-                <button class="donate-submit" onclick="submitDonation()">
-                    <i class="fas fa-hand-holding-heart"></i> Complete Donation
+                <button class="donate-submit" onclick="openPaystackWithAmount()">
+                    <i class="fas fa-hand-holding-heart"></i> Pay Now
                 </button>
             </div>
 
@@ -1668,7 +1623,7 @@
             <div class="comment-form fade-in">
                 <h3><i class="fas fa-lock" style="color:var(--green-medium)"></i> Donors Only Comments</h3>
                 <p style="color:var(--gray-dark);font-size:0.95rem;margin-bottom:1rem;">Only those who have donated can leave a comment. Make a donation to share your message of support for Claire.</p>
-                <a href="https://paystack.shop/pay/maryclaire" target="_blank" class="btn btn-primary" style="display:inline-flex;text-decoration:none;">
+                <a href="javascript:void(0)" onclick="openPaystack()" class="btn btn-primary" style="display:inline-flex;text-decoration:none;cursor:pointer;">
                     <i class="fas fa-hand-holding-heart"></i> Donate to Comment
                 </a>
             </div>
@@ -1817,40 +1772,16 @@
             `).join('');
         }
 
-        // ====== DONATION FORM ======
-        let selectedAmount = 500;
-
-        function selectAmount(btn, amount) {
-            document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
-            btn.classList.add('selected');
-            selectedAmount = amount;
-            document.getElementById('customAmount').value = '';
-        }
-
-        function selectPayment(el) {
-            document.querySelectorAll('.payment-method').forEach(p => p.classList.remove('selected'));
-            el.classList.add('selected');
-        }
-
-        function submitDonation() {
-            // Get amount from custom input or selected preset
-            var customAmt = document.getElementById('customAmount').value;
-            var amount = customAmt ? parseFloat(customAmt) : selectedAmount;
-
-            if (!amount || amount <= 0) {
-                alert('Please enter a valid amount.');
-                return;
-            }
-
-            // Use Paystack Popup (Inline) method
+        // ====== PAYSTACK POPUP (INLINE) ======
+        function openPaystack(amount) {
+            amount = amount || 500; // default 500 KSh if no amount given
             var paystackPop = new PaystackPop();
             paystackPop.newTransaction({
-                key: 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+                key: 'pk_live_4eb2fac4f4bf3b6e3889e5c448ef0e688d6d5145',
                 email: 'payments@hireconnect.com',
                 amount: amount * 100, // Convert to Kobo/Cents
                 onSuccess: function (transaction) {
                     console.log('Payment successful! Reference: ' + transaction.reference);
-                    // Show thank you modal
                     document.getElementById('thankYouModal').classList.add('active');
                     document.getElementById('modalMessage').textContent = 'Your generous donation of KSh ' + amount.toLocaleString() + ' has been received. Reference: ' + transaction.reference + '. May God bless you abundantly.';
                 },
@@ -1858,6 +1789,16 @@
                     alert('Transaction was not completed, window closed.');
                 }
             });
+        }
+
+        function openPaystackWithAmount() {
+            var amountInput = document.getElementById('donateAmount');
+            var amount = parseFloat(amountInput.value);
+            if (!amount || amount <= 0) {
+                alert('Please enter a valid amount.');
+                return;
+            }
+            openPaystack(amount);
         }
 
         // ====== COMMENT FORM ======
