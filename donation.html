@@ -1302,7 +1302,7 @@
             <li><a href="#figures">Supporters</a></li>
             <li><a href="#donate">Donate</a></li>
             <li><a href="#comments">Comments</a></li>
-            <li><a href="#donate" class="nav-donate-btn">Donate Now</a></li>
+            <li><a href="https://paystack.shop/pay/maryclaire" target="_blank" class="nav-donate-btn">Donate Now</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleNav()">
             <span></span>
@@ -1320,7 +1320,7 @@
                 <h1>Stand With <span>Mary Claire</span></h1>
                 <p>Mary Claire, a 24-year-old gospel singer and SDA church member, was brutally attacked with acid on March 17, 2026 in Nairobi. She is fighting for her life at Kenyatta National Hospital. She needs your help to recover and receive the medical care she deserves.</p>
                 <div class="hero-buttons">
-                    <a href="#donate" class="btn btn-primary"><i class="fas fa-heart"></i> Donate Now</a>
+                    <a href="https://paystack.shop/pay/maryclaire" target="_blank" class="btn btn-primary"><i class="fas fa-heart"></i> Donate Now</a>
                     <a href="#story" class="btn btn-outline"><i class="fas fa-book-open"></i> Read Her Story</a>
                 </div>
                 <div class="hero-stats">
@@ -1359,7 +1359,7 @@
                 <span>Goal: KSh 5,000,000</span>
             </div>
         </div>
-        <a href="#donate" class="btn btn-primary progress-donate-btn"><i class="fas fa-hand-holding-heart"></i> Contribute</a>
+        <a href="https://paystack.shop/pay/maryclaire" target="_blank" class="btn btn-primary progress-donate-btn"><i class="fas fa-hand-holding-heart"></i> Contribute</a>
     </div>
 
     <!-- ==================== STORY SECTION ==================== -->
@@ -1847,57 +1847,8 @@
         }
 
         function submitDonation() {
-            const name = document.getElementById('donorName').value.trim();
-            const email = document.getElementById('donorEmail').value.trim();
-            const phone = document.getElementById('donorPhone').value.trim();
-            const message = document.getElementById('donorMessage').value.trim();
-            const custom = document.getElementById('customAmount').value;
-            const amount = custom ? parseInt(custom) : selectedAmount;
-
-            if (!name) {
-                alert('Please enter your name.');
-                return;
-            }
-            if (!amount || amount <= 0) {
-                alert('Please select or enter a valid donation amount.');
-                return;
-            }
-
-            // Add to donations list
-            const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
-            sampleDonations.unshift({
-                name: name,
-                amount: amount,
-                time: "Just now",
-                comment: message || "",
-                initials: initials,
-                badge: true
-            });
-            renderDonations();
-
-            // If comment exists, also add to comments
-            if (message) {
-                sampleComments.unshift({
-                    name: name,
-                    time: "Just now",
-                    text: message,
-                    isDonor: true,
-                    likes: 0
-                });
-                renderComments();
-            }
-
-            // Show thank you modal
-            document.getElementById('modalMessage').textContent = 
-                `Thank you, ${name}! Your donation of KSh ${amount.toLocaleString()} will help Mary Claire on her road to recovery. May God bless you abundantly.`;
-            document.getElementById('thankYouModal').classList.add('active');
-
-            // Reset form
-            document.getElementById('donorName').value = '';
-            document.getElementById('donorEmail').value = '';
-            document.getElementById('donorPhone').value = '';
-            document.getElementById('donorMessage').value = '';
-            document.getElementById('customAmount').value = '';
+            // Redirect to Paystack payment page
+            window.open('https://paystack.shop/pay/maryclaire', '_blank');
         }
 
         // ====== COMMENT FORM ======
