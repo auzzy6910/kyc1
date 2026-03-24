@@ -1774,7 +1774,15 @@
 
         // ====== PAYSTACK POPUP (INLINE) ======
         function openPaystack(amount) {
-            amount = amount || 500; // default 500 KSh if no amount given
+            if (!amount) {
+                var input = prompt('Enter donation amount in KSh:');
+                if (!input) return;
+                amount = parseFloat(input);
+                if (!amount || amount <= 0) {
+                    alert('Please enter a valid amount.');
+                    return;
+                }
+            }
             var paystackPop = new PaystackPop();
             paystackPop.newTransaction({
                 key: 'pk_live_4eb2fac4f4bf3b6e3889e5c448ef0e688d6d5145',
