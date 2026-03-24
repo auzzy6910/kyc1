@@ -6,6 +6,7 @@
     <title>ACTIVE KYC WORK - Admin Panel</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="style.css">
   </head>
 <body>
@@ -38,6 +39,10 @@
             <button class="nav-tab" data-tab="settings">
                 <i class="fas fa-cog"></i>
                 <span class="tab-label">Settings</span>
+            </button>
+            <button class="nav-tab" data-tab="payment">
+                <i class="fas fa-credit-card"></i>
+                <span class="tab-label">Payment</span>
             </button>
         </div>
 
@@ -342,7 +347,61 @@
         </div>
     </div>
 
+        <!-- Payment Tab -->
+        <div id="payment" class="tab-content">
+            <div class="content-padding">
+                <div class="flex items-center justify-center min-h-[300px]">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-sm">
+                        <h3 class="text-xl font-semibold text-gray-800 text-center mb-6">Make Payment</h3>
+                        <div class="mb-6">
+                            <label for="paystack-amount" class="block text-sm font-medium text-gray-600 mb-2">Amount</label>
+                            <input
+                                type="number"
+                                id="paystack-amount"
+                                placeholder="Enter amount"
+                                min="1"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-700 text-base"
+                            />
+                        </div>
+                        <button
+                            id="pay-now-btn"
+                            class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 ease-in-out"
+                        >
+                            Pay Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://js.paystack.co/v2/inline.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Paystack Payment Integration
+        document.getElementById('pay-now-btn').addEventListener('click', function () {
+            var amountInput = document.getElementById('paystack-amount');
+            var amount = parseFloat(amountInput.value);
+
+            if (!amount || amount <= 0) {
+                alert('Please enter a valid amount.');
+                return;
+            }
+
+            var paystackPop = new PaystackPop();
+            paystackPop.newTransaction({
+                key: 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+                email: 'payments@hireconnect.com',
+                amount: amount * 100, // Convert to Kobo/Cents
+                onSuccess: function (transaction) {
+                    console.log('Payment successful! Reference: ' + transaction.reference);
+                },
+                onClose: function () {
+                    alert('Transaction was not completed, window closed.');
+                }
+            });
+        });
+    </script>
 
   </body>
 </html>
